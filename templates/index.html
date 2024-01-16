@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انشاء السيرة الذاتية الخاصة بك</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+
+    <img src="{% static 'images/bg.png' %}" alt="" class="bg">
+
+    <form method="POST" class="container">
+        {% csrf_token %}
+        <p id="title">البيانات الشخصية</p>
+        <div class="data " id="personl_info">
+            <input type="text" placeholder="اسمك بالكامل" name="full_name">
+            <input type="text" placeholder="رقم الهاتف" name="phone">
+            <input type="email" placeholder="البريد الالكتروني" name="email">
+            <input type="text" placeholder="العنوان" name="address">
+        </div>
+
+        <div class="data hide" id="about">
+            <textarea id="" name="about" placeholder="تكلم عن نفسك" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="data hide" id="projects">
+            <input type="text" hidden name="projects" id="projects-value">
+            <input type="text" placeholder="عنوان المشروع" class="proj-title">
+            <textarea name="" placeholder="وصف المشروع" id="" cols="30" rows="10"></textarea>
+        </div>
+
+
+        <div class="data hide" id="cv_type">
+            <input type="text" name="cv_type" hidden>
+
+            <div class="box" id="dark">
+                <small class="check"></small>
+                <img src="{% static 'images/cv-dark.png' %}" alt="">
+            </div>
+
+            <div class="box" id="light">
+                <small class="check"></small>
+                <img src="{% static 'images/cv-light.png' %}" alt="">
+            </div>
+        
+            
+
+        </div>
+
+
+        <div class="btns">
+            <button id="next" type="button">التالي</button>
+        </div>
+
+
+    </form>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
